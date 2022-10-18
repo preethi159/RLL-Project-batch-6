@@ -1,0 +1,23 @@
+<h2>Welcome to Cuisines</h2>
+<div *ngFor="let c of cuisines">
+    <li>
+        {{c.name}}
+ <input type="button" value="delete" (click)="deleteCuisines(c.id)"/>
+
+    </li>
+    
+
+</div>
+<div *ngIf="flag">
+    <form [formGroup]="cuisinesRef" (ngSubmit)="addCuisines()">
+      
+        <label>Name</label>
+        <input type="text" formControlName="name"/><br/>
+    <input type="submit" value="addCuisines"/>
+    </form>
+</div>
+<span >{{msg}}</span>
+
+<input type="button" value="add more" (click)="addmore()"/>
+
+

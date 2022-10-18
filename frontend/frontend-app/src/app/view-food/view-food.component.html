@@ -1,0 +1,59 @@
+<div *ngIf="flag">
+    <h2>Update Food</h2>
+    <form (ngSubmit)="updateFoodFromDB()">
+        <label>Id</label>
+        <input type="number" name="id" [(ngModel)]="id" readonly/><br/>
+        <label>Price</label>
+        <input type="number" name="price" [(ngModel)]="price"/><br/>
+        <label>URL</label>
+        <input type="URL" name="url" [(ngModel)]="url"/><br/>
+        <label>Offer</label>
+        <input type="number" name="offer" [(ngModel)]="offer"/><br/>
+        <label>Description</label>
+        <input type="string" name="description" [(ngModel)]="description"/><br/>
+        <input type="submit" value="update food"/>
+        <input type="reset" value="reset"/>
+    </form>
+</div>
+<form [formGroup]="foodRef" (ngSubmit)="findByFid()">
+        <label>Id</label>
+        <input type="number" formControlName="pid"><br/>
+        <input type="submit" value="search by FId"/>
+
+</form>
+<input type="button" value="view all items" (click)="findAllFood()"/> 
+<div *ngIf="flag2">
+
+<span *ngFor="let f of foods">
+
+    
+    <img src={{f.url}} width="150px" height="150px"/>
+    <span>{{f.name}} {{f.price}} {{f.offer}} {{f.description}}  </span>
+
+ <input type="button" value="delete" (click)="deleteFood(f.id)"/>
+    <input type="button" value="update" (click)="updateFood(f)"/>
+</span>
+</div>
+<div *ngIf="flag1">
+<span *ngFor="let f1 of foods1">
+
+    
+    <img src={{f1.url}} width="150px" height="150px"/>
+    <span>{{f1.name}} {{f1.price}} {{f1.offer}} {{f1.description}}  </span>
+</span>
+</div>
+
+<form [formGroup]="foodRef" (ngSubmit)="findByName()">
+    <label>Name</label>
+    <input type="text" formControlName="pname"><br/>
+    <input type="submit" value="search by name"/>
+
+</form>
+<div *ngIf="flag3">
+    <span *ngFor="let f2 of foods2">
+    
+        
+        <img src={{f2.url}} width="150px" height="150px"/>
+        <span>{{f2.name}} {{f2.price}} {{f2.offer}} {{f2.description}}  </span>
+    </span>
+    </div>

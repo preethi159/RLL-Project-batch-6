@@ -1,0 +1,22 @@
+<div>
+    <h2>Add Food</h2>
+    <form [formGroup]="foodRef" (ngSubmit)="storeFood()">
+        <label>Id</label>
+        <input type="number" formControlName="id"><br/>
+        <label>Name</label>
+        <input type="text" formControlName="name"><br/>
+        <label>Price</label>
+        <input type="number" formControlName="price"><br/>
+        <label>URL</label>
+        <input type="url" formControlName="url"><br/>
+        <label>Offer</label>
+        <input type="number" formControlName="offer"><br/>
+        <label>Description</label>
+        <input type="text" formControlName="description"><br/>
+        <label>fid</label>
+        <input type="number" formControlName="fid"><br/>
+        <input type="submit" value="store Food"/><br/>
+        <input type="reset" value="reset"/><br/>
+    </form><br/>
+    <span style="color:red">{{msg}}</span>
+</div>
