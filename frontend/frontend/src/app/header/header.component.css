@@ -1,0 +1,73 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: darkslategrey;
+    padding: 0px;
+    margin: 0px;
+}
+/* .nav .logo{
+    height: 60px;
+    width: 50px;
+    display: flex;
+    margin-left: 5px;
+    border-radius: 50px ;
+    border: 2px solid green;
+} */
+.nav h1{
+    color: white;
+    margin:0;
+    font-size: 40px;
+    margin-left: 15px;
+     /* border: 2px solid green; */
+     margin-top: 10px;
+     margin-bottom: 10px;
+    
+}
+.nav ul{
+    display: inline-flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav li{
+    padding-left: 15px;
+    padding-top: 15px;
+}
+.nav li a{
+    text-decoration: none;
+    color:white
+}
+.nav .nav-search
+{
+    margin-top: 12px;
+    flex: 1;
+    display: flex;
+    margin-left: 7%;
+    margin-right: 8%;
+    margin-bottom: 8px;
+}
+.nav .nav-search input
+{
+    flex: 1;
+    color: violet;
+    border: 1px solid blueviolet;
+    height: 35px;
+    border-right: 0px;
+}
+.nav .nav-search button
+{
+    
+    color: violet;
+    border: 1px solid blueviolet;
+    height: 39px;
+    border-left: 0px;
+    /* pointer-events: cursor; */
+}
+
+
+.contain
+{
+    height: 100vh;
+    width: 100%;
+   
+}

@@ -1,0 +1,20 @@
+#cui1 input{
+    margin-top: 10px;
+}
+#cyi2 {
+margin-top: 20px;
+}
+#cyi2 input {
+    margin: 20px;
+    }
+#h23{
+        color: rgb(31, 102, 216);
+        font-size: 30px;
+        box-shadow: rgb(66, 202, 214) 2px 5px 5px ;
+    }
+    li {
+        background: #cce5ff;
+        color: darkblue;
+        margin: 5px;
+        font-size: 25px;
+      }

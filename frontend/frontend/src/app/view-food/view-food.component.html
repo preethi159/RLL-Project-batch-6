@@ -1,0 +1,106 @@
+<div>
+    <form [formGroup]="foodRef" (ngSubmit)="findByFid()" id="viewfood1">
+            <label>Id</label>
+            <input type="number" formControlName="pid">
+            <input type="submit" value="search by FId"   class="btn btn-info"/>
+    
+    </form>
+    <form [formGroup]="foodRef" (ngSubmit)="findByName()" id="viewfood2">
+        <label>Name</label>
+        <input type="text" formControlName="pname">
+        <input type="submit" value="search by name"   class="btn btn-info"/>
+    
+    </form>
+    <input type="button" value="view all items" (click)="findAllFood()"  class="btn btn-success" /> 
+    </div>
+    <div *ngIf="flag" id="update1">
+    <h2>Update Food</h2>
+    <form (ngSubmit)="updateFoodFromDB()">
+        <label>Id</label>
+        <input type="number" name="id" [(ngModel)]="id" readonly/><br/>
+        <label>Price</label>
+        <input type="number" name="price" [(ngModel)]="price"/><br/>
+        <label>URL</label>
+        <input type="URL" name="url" [(ngModel)]="url"/><br/>
+        <label>Offer</label>
+        <input type="number" name="offer" [(ngModel)]="offer"/><br/>
+        <label>Description</label>
+        <input type="string" name="description" [(ngModel)]="description"/><br/>
+        <input type="submit" value="update food"  class="btn btn-primary"/>
+        <input type="reset" value="reset"  class="btn btn-warning"/>
+    </form>
+
+</div>
+
+<div *ngIf="flag2">
+
+<span *ngFor="let f of foods">
+
+    
+    <img src={{f.url}} width="150px" height="150px"/><br/>
+    <b><label style="font-style: italic;">Food Name : </label>
+        <span style="color: blue; font-family: 'Times New Roman', Times, serif; font-style: italic;">{{f.name}} </span><br/>
+        <label>Price :</label>
+            <span style="color: blue; font-family: 'Times New Roman', Times, serif; font-style: italic;"> Rs.{{f.price}}</span> <br/>
+            <label>Offer :</label>
+           <span style="color: blue; font-family: 'Times New Roman', Times, serif; font-style: italic;"> {{f.offer}} %</span><br/> 
+          
+          <span style="color: blue; font-family: 'Times New Roman', Times, serif; font-style: italic;">  {{f.description}}</span> <br/>
+        </b>
+    <input type="button" value="edit" class="btn btn-primary" (click)="updateFood(f)"/>
+ <input type="button" value="delete" class="btn btn-danger" (click)="deleteFood(f.id)"/>
+   <br/>
+</span>
+</div>
+<div *ngIf="flag1">
+<span *ngFor="let f1 of foods1">
+
+    
+    <img src={{f1.url}} width="150px" height="150px"/><br/>
+    <b><label style="font-style: italic;">Food Name : </label>
+        <span style="color: blue; font-family: 'Times New Roman', Times, serif; font-style: italic;">{{f1.name}} </span><br/>
+        <label>Price :</label>
+            <span style="color: blue; font-family: 'Times New Roman', Times, serif; font-style: italic;"> Rs.{{f1.price}}</span> <br/>
+            <label>Offer :</label>
+           <span style="color: blue; font-family: 'Times New Roman', Times, serif; font-style: italic;"> {{f1.offer}} %</span><br/> 
+          
+          <span style="color: blue; font-family: 'Times New Roman', Times, serif; font-style: italic;">  {{f1.description}}</span> <br/>
+        </b>
+    <input type="button" value="edit" class="btn btn-primary" (click)="updateFood(f1)"/>
+    <input type="button" value="delete" class="btn btn-danger" (click)="deleteFood(f1.id)"/>
+    
+</span>
+<!-- <app-razorpay></app-razorpay> -->
+
+</div>
+
+
+<div *ngIf="flag3" >
+    
+        
+   
+    <span *ngFor="let f2 of foods2">
+  
+        
+        <img src={{f2.url}} width="150px" height="150px"/><br/>
+    
+        <b><label style="font-style: italic;">Food Name : </label>
+            <span style="color: blue; font-family: 'Times New Roman', Times, serif; font-style: italic;">{{f2.name}} </span><br/>
+            <label>Price :</label>
+                <span style="color: blue; font-family: 'Times New Roman', Times, serif; font-style: italic;"> Rs.{{f2.price}}</span> <br/>
+                <label>Offer :</label>
+               <span style="color: blue; font-family: 'Times New Roman', Times, serif; font-style: italic;"> {{f2.offer}} %</span><br/> 
+              
+              <span style="color: blue; font-family: 'Times New Roman', Times, serif; font-style: italic;">  {{f2.description}}</span> <br/>
+            </b>
+        
+         <input type="button" value="edit" class="btn btn-primary" (click)="updateFood(f2)"/>
+         <input type="button" value="delete" class="btn btn-danger" (click)="deleteFood(f2.id)"/>
+    <br/>
+         
+        
+    </span>
+    </div>
+    
+    <!-- <a routerLink="razorpay"><input type="button" value="pay" class="btn btn-primary "></a> -->
+   
