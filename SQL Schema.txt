@@ -1,0 +1,30 @@
+Login :
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| emailid    | varchar(255) | NO   | PRI | NULL    |       |
+| address    | varchar(255) | YES  |     | NULL    |       |
+| name       | varchar(255) | YES  |     | NULL    |       |
+| password   | varchar(255) | YES  |     | NULL    |       |
+| phno       | int          | NO   |     | NULL    |       |
+| typeofuser | varchar(255) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+ Food:
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| id          | int          | NO   | PRI | NULL    |       |
+| description | varchar(255) | YES  |     | NULL    |       |
+| fid         | int          | YES  | MUL | NULL    |       |
+| name        | varchar(255) | YES  |     | NULL    |       |
+| offer       | int          | NO   |     | NULL    |       |
+| price       | float        | NO   |     | NULL    |       |
+| url         | blob         | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+Cuisines:
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int          | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(255) | YES  |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
