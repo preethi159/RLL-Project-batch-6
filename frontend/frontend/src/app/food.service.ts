@@ -28,9 +28,9 @@ export class FoodService {
  findFoodByCuisine(fid:number):Observable<Food[]> {
      return this.http.get<Food[]>(this.baseUrl+"/findFoodByCuisine/"+fid);
    }
-  findAllProductById(pid:number):Observable<string> {
-    return this.http.get(this.baseUrl+"/findAllProduct/"+pid,{responseType:"text"});
-  }
+  // findAllProductById(pid:number):Observable<string> {
+  //   return this.http.get(this.baseUrl+"/findAllProduct/"+pid,{responseType:"text"});
+  // }
   deleteFood(id:number):Observable<string> {
     return this.http.delete(this.baseUrl+"/deleteFood/"+id,{responseType:"text"});
   }
